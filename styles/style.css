@@ -176,3 +176,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0);
   overflow: hidden;
 }
+
+h1 {
+  background: red;
+  content: "hihihihihihihihih";
+}
