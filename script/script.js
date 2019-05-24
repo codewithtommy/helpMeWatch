@@ -4,12 +4,19 @@
 // API key
   movieShowApp.key = `cca8aaccc614149518ad4b0a721a135a`; 
 
+  movieShowApp.randomMovie = (test) => {
+    // randomize the array, need to randomize the array here
+    randomM = test[Math.floor(Math.random() * test.length)];
+    console.log(randomM);
+  }
+
 // AJAX call for Movies and TV shows.
 movieShowApp.getMovies = function (){
   console.log(`pizza is ready`);
 
   // Call for MOVIES > Discover.
   $.ajax({
+    // might have to change the url to just '18' for drama and then make a seperate call for '35', but let's see what we get first
     url: `https://api.themoviedb.org/3/discover/movie?language=en-US&with_genres=18,35`,
     method: `GET`,
     datatype:`json`,
@@ -17,9 +24,29 @@ movieShowApp.getMovies = function (){
       api_key: movieShowApp.key
     }
   }).then(function (movieResults){
-    console.log(movieResults.results[i].genre_id[2]);
+
+    // console.log(movieResults);
+    // we make movieResults.results into a variable 'test'. we can change the name later
+    const test = movieResults.results;
+    // we'll get this an array now, since we get the data from the ajax call as an object
+    console.log(test)
+    // we then need to randomize our movie before the display, so we have a function created above to randomize the movie into this, then call it below
+    movieShowApp.randomMovie(test)
+
+
+
+    // dont' need to loop here i think, we can just random through it
+    // console.log(movieResults.results[i].genre_id[2]);
 
     // create a for loop to loop around the results 0-19 or 0-12 
+
+  //  for(i = 0; i < movieResults.length; i++){
+
+  //    le movieResults.result[i].genre_id[2]
+
+  //   }
+
+  // movieDramaChecked === newArray
     // for $(`movieResults.results[i].genre_id[2])`)
     // push it this into a new array
     // append from the new array to the section you want... etc
