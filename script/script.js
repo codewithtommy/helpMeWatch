@@ -1,12 +1,12 @@
 
 // holds everything safe.
-  movieShowApp = {};
+movieShowApp = {};
 
 // API key
-  movieShowApp.key = `cca8aaccc614149518ad4b0a721a135a`; 
+movieShowApp.key = `cca8aaccc614149518ad4b0a721a135a`; 
 // randomize movies*********
 // randomize the array, need to randomize the array here.
- movieShowApp.randomMovie = (movieDramaAll) => {
+movieShowApp.randomMovie = (movieDramaAll) => {
   randomM = movieDramaAll[Math.floor(Math.random() * movieDramaAll.length)];
 }
 // for comedy

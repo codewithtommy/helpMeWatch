@@ -1,3 +1,33 @@
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 125%;
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  margin: 0 15%;
+}
+
+h1, h2, h3 {
+  margin: 0%;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Archivo", sans-serif;
+  font-size: 4.5rem;
+  font-weight: "700";
+  text-transform: uppercase;
+  padding: 0 15%;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
@@ -177,7 +207,31 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-h1 {
-  background: red;
-  content: "hihihihihihihihih";
+button {
+  margin: 0 auto;
+  width: 15%;
+}
+
+.hero {
+  background: beige;
+  height: 100vh;
+}
+
+.hero .title {
+  padding-top: 25%;
+}
+
+.hero .title,
+.hero .buttonTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }

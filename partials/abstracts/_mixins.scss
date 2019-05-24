@@ -1,0 +1,18 @@
+// FONTS
+
+@mixin fontProperty ($col, $fFamily, $fSize, $fWeight) {
+	color: $col;
+  font-family: $fFamily;
+  font-size: $fSize;
+  font-weight: $fWeight;
+}
+
+// LAYOUT/ POSITIONING: CENTER
+
+@mixin flexCenter ($acon, $item, $disp, $colu, $cent) {
+	align-content: $acon;
+	align-items: $item;
+	display: $disp;
+	flex-direction: $colu;
+	justify-content: $cent;
+}

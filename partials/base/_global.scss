@@ -1,0 +1,55 @@
+// FONT
+
+$fontFirst: 'Archivo', sans-serif;
+$fontSecond: 'Montserrat', sans-serif;
+
+// COLOR PALETTE 
+
+$colFirst: #FE71BE;
+$colSecond: #71FE7B;
+$colThird: #FDFF72;
+$colCompliment: #CEFF72;
+
+$wht: #FFFFFF;
+$blk: #000000;
+$gry: #404040;
+
+// $buttonHover: #FFDCAA;
+// $shadow: #C0C0C0;
+
+// LINEWEIGHT
+
+$light: '300';
+$normal: '400';
+$semibold: '500';
+$bold: '700';
+
+// GENERAL
+
+html {
+	font-family: $fontSecond;
+	font-size: 125%;
+	scroll-behavior: smooth;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	width: 100%;
+}
+
+.wrapper {
+  margin: 0 15%;
+}
+
+h1, h2, h3 {
+  margin: 0%;
+  text-align: center;
+}
+
+h1 {
+  @include fontProperty (null, $fontFirst, 4.5rem, $bold);
+  text-transform: uppercase;
+  padding: 0 15%;
+}
