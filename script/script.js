@@ -8,7 +8,7 @@
   // randomize the array, need to randomize the array here.
   movieShowApp.randomMovie = (test) => {
     randomM = test[Math.floor(Math.random() * test.length)];
-    console.log(randomM);
+    // console.log(randomM);
   }
 
 // AJAX call for Movies and TV shows.
@@ -127,19 +127,26 @@ $(`.formTwo`).on(`submit`, function (event) {
   event.preventDefault();
   console.log(`need to append shit here after selecting and submitting`);
 
+  // variable created for MOVIES with sub-choices: Drama or Comedy.
   const movieDramaChecked = ($('#movies:checked').val() && $('#drama:checked').val());
+  const movieComedyChecked = ($('#movies:checked').val() && $('#comedy:checked').val());
 
-  // if (movieDramaChecked) {
-  //   for (let i = 0; i < test.length; i++) {
-  //     if(test[i].)
-  //   }
-  // }
+  // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
+  if (movieDramaChecked) {
+    $(`.result`).html(
+      // did some testing... seems like its pulling from the API drama/comedy hybrids
+      `<h2>${randomM.title}</h2>
+      <h3>${randomM.overview}</h3>`
+    )
+  }
 })
 
 
-// movieShowApp.displayMovie = function(arrayOfMovies){
-//   console.log(arrayOfMovies);
-// }
+
+
+
+
+
 
 // init method holds anything that needs to be run at load times + even listeners.
 movieShowApp.init = function (){
