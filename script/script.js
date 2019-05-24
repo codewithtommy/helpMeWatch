@@ -135,18 +135,12 @@ $(`.formTwo`).on(`submit`, function (event) {
   if (movieDramaChecked) {
     $(`.result`).html(
       // did some testing... seems like its pulling from the API drama/comedy hybrids
+      // find a way to get the images inserted in? Might have to use .attr
       `<h2>${randomM.title}</h2>
       <h3>${randomM.overview}</h3>`
     )
   }
 })
-
-
-
-
-
-
-
 
 // init method holds anything that needs to be run at load times + even listeners.
 movieShowApp.init = function (){
