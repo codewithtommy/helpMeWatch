@@ -18,14 +18,7 @@ movieShowApp.getMovies = function (){
     }
   }).then(function (movieResults){
     console.log(movieResults);
-
-
-//     $('.result').empty();
-
-//     let movies = results.movieChoice;
-
-//     movieShowApp.displayMovie(movies)
-  })
+  });
 
   // Call for TV SHOWS > Discover
   // $.ajax({
@@ -92,41 +85,19 @@ $(`.formTwo`).on(`submit`, function (event) {
   event.preventDefault();
   console.log(`pizza is cold, put it back`);
 
-  const movieDrama = ($('#movies:checked').val() && $('#drama:checked').val());
+  const movieDramaChecked = ($('#movies:checked').val() && $('#drama:checked').val());
 
-  if (movieDrama === results[0].genre_ids[18]);
-    $(`.formTwo`).html (
-      <div class="imgContainer"></div>
-      <div class="infoText"></div>
-    )
+  if (movieDramaChecked === movieDrama);
+    console.log(movieDrama)
 })
-
-// IF the user selects movies... we perform a function of the following:
-
-
-  // IF Movies is checked... ask the USER IF it would be DRAMA or COMEDY.
-  // if ($(`#movies:checked`).val()) {
-
-  //   // AMMEND to .filter div in index.html the following:
-  //   $(`.discover`).html(
-  //     `<input type="radio" id="drama" name="drama" value="drama">
-  //     <label for="drama">Feelin' Emotional?</label>
-  //     <input type="radio" id="comedy" name="comedy" value="comedy">
-  //     <label for="comedy">Need Some Laughs?</label>`
-  //   )
-  // };
-// })
-
 
 
 movieShowApp.displayMovie = function(arrayOfMovies){
   console.log(arrayOfMovies);
-
 }
 
 // Init method holds anything that needs to be run at load times + even listeners.
 movieShowApp.init = function (){
-
   movieShowApp.getMovies()
 }
 
