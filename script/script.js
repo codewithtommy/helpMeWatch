@@ -17,7 +17,12 @@ movieShowApp.getMovies = function (){
       api_key: movieShowApp.key
     }
   }).then(function (movieResults){
-    console.log(movieResults);
+    console.log(movieResults.results[i].genre_id[2]);
+
+    // create a for loop to loop around the results 0-19 or 0-12 
+    // for $(`movieResults.results[i].genre_id[2])`)
+    // push it this into a new array
+    // append from the new array to the section you want... etc
   });
 
   // Call for TV SHOWS > Discover
