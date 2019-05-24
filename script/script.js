@@ -131,15 +131,15 @@ $(`.start`).on(`click`, function (event) {
 // SECTION: under .discover to .formOne
 $(`.formOne`).on(`submit`, function (event) {
   event.preventDefault();
-
   // disabled "submit" button in the first set of choice selections.
-  $(`.secondSubmit`).attr(`disabled`, true);
+  // $(`.secondSubmit`).attr(`disabled`, true);
   // disabled "input[type="radio"] reselection in the first set of choice selections
-  $(`input[type="radio"]`).attr(`disabled`, true);
+  // $(`input[type="radio"]`).attr(`disabled`, true);
   // scroll to .filter section to append another set of selections.
   $(`html, body`).animate({
     scrollTop: $(`#filter`).offset().top
   }, 1000);
+  
   
   // IF input[type="movies"] is checked append/ html _____ to .formTwo
   if ($(`#movies:checked`).val()) {
@@ -153,6 +153,7 @@ $(`.formOne`).on(`submit`, function (event) {
 
       <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>`
     );
+    $('.formOne').css('display', 'none');
   } else if ($(`#tvShows:checked`).val()) {
     $(`.formTwo`).html (
       `<input type="radio" id="drama" value="drama" name="genreSub"></input>
@@ -163,9 +164,13 @@ $(`.formOne`).on(`submit`, function (event) {
 
       <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>`
     );
-  };
+    $('.formOne').css('display', 'none');
+      
+  }else{
+    alert('pick please');
+  }
+ 
 })
-
 // SECTION: under .discover to .formTwo
 $(`.formTwo`).on(`submit`, function (event) {
   event.preventDefault();
@@ -185,6 +190,11 @@ $(`.formTwo`).on(`submit`, function (event) {
       `<h2>${randomM.title}</h2>
       <h3>${randomM.overview}</h3>`)
     $(`.result`).append(moviePoster);
+    // reset button
+    $(`.result`).append(
+      `<a href="#hero">
+    <button>Reset</button>
+    </a>`)
 
   } else if(movieComedyChecked){
       const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`)
@@ -192,24 +202,48 @@ $(`.formTwo`).on(`submit`, function (event) {
       `<h2>${randomM.title}</h2>
       <h3>${randomM.overview}</h3>`) 
     $(`.result`).append(moviePoster);
+    // reset button
+    $(`.result`).append(
+      `<a href="#hero">
+    <button>Reset</button>
+    </a>`)
   };
 
   
   if(tvDramaChecked){
+    // hides selections
+    $('.formTwo').css('display', 'none');
+    
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`)
     $(`.result`).html(
       `<h2>${randomT.name}</h2>
-      <h3>${randomT.overview}</h3>`)
+       <h3>${randomT.overview}</h3>`)
+
     $(`.result`).append(tvPoster);
+    // reset button here
+    $(`.result`).append(
+    `<a href="#hero">
+    <button>Reset</button>
+    </a>`)
+
   } else if (tvComedyChecked) {
+    $('.formTwo').css('display', 'none');
+
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`)
     $(`.result`).html(
       `<h2>${randomT.name}</h2>
       <h3>${randomT.overview}</h3>`)
     $(`.result`).append(tvPoster);
+    // reset button
+    $(`.result`).append(
+      `<a href="#hero">
+    <button>Reset</button>
+    </a>`)
+
+
   }
   else{
-    alert('please pick a selection')
+    alert('please pick');
   }
 })
 
