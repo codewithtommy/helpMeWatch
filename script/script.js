@@ -8,7 +8,7 @@
   // randomize the array, need to randomize the array here.
   movieShowApp.randomMovie = (test) => {
     randomM = test[Math.floor(Math.random() * test.length)];
-    // console.log(randomM);
+    console.log(randomM);
   }
 
 // AJAX call for Movies and TV shows.
@@ -18,7 +18,7 @@ movieShowApp.getMovies = function (){
   // call for Movies API.
   $.ajax({
     // might have to change the url to just '18' for drama and then make a seperate call for '35', but let's see what we get first
-    url: `https://api.themoviedb.org/3/discover/movie?language=en-US&with_genres=18,35`,
+    url: `https://api.themoviedb.org/3/discover/movie?language=en-US&with_genres=18`,
     method: `GET`,
     datatype:`json`,
     data: {
@@ -35,24 +35,6 @@ movieShowApp.getMovies = function (){
 
     // we then need to randomize our movie before the display, so we have a function created above to randomize the movie into this, then call it below
     movieShowApp.randomMovie(test)
-
-
-
-    // dont' need to loop here i think, we can just random through it
-    // console.log(movieResults.results[i].genre_id[2]);
-
-    // create a for loop to loop around the results index 0-19 or 0-20 
-
-  //  for(i = 0; i < movieResults.length; i++){
-
-  //    le movieResults.result[i].genre_id[2]
-
-  //   }
-
-  // movieDramaChecked === newArray
-    // for $(`movieResults.results[i].genre_id[2])`)
-    // push it this into a new array
-    // append from the new array to the section you want... etc
   });
 
 // deleted tvShows call for ajax for now to make things less messy... can copy paste then re-adjust from our first call.
@@ -133,12 +115,16 @@ $(`.formTwo`).on(`submit`, function (event) {
 
   // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
   if (movieDramaChecked) {
+    const imageTing = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`)
     $(`.result`).html(
       // did some testing... seems like its pulling from the API drama/comedy hybrids
       // find a way to get the images inserted in? Might have to use .attr
       `<h2>${randomM.title}</h2>
-      <h3>${randomM.overview}</h3>`
+      <h3>${randomM.overview}</h3>
+      `
     )
+    $(`.result`).append(imageTing);
+    
   }
 })
 
