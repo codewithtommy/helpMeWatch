@@ -5,6 +5,9 @@
     @include flexCenter (null, center, flex, null, space-evenly);
     background: $whtTwo;
     border-radius: 25px;
-    padding: 5% 20%;
+    font-size: 1.25rem;
+    padding: 5%;
   }
 }
+
+// NOTE: refer to _discover.scss for .formTwo styling... which is the same as .formOne. They are both targetted together for DRY coding.

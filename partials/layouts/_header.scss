@@ -1,20 +1,14 @@
 .hero {
-  // background: beige;
+  @include flexCenter (null, center, flex, null, null);
   height: 100vh;
 
-  .title,
-  .buttonTop,
-  .buttonReset {
-    @include flexCenter (null, null, flex, column, center);
-    text-align: center;
-  }
-
   .title {
-    padding-top: 25%;
+    padding: 0%;
 
     p {
+      padding: 0%;
+      text-align: left;
       text-shadow: 2.5px 2px 10px $blk;
-      padding: 0 5%;
     }
   }
 }

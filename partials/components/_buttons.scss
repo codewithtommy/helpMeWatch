@@ -1,3 +1,5 @@
+//  general button styling for the top buttons, second button, third button
+
 button {
   margin: 0 auto;
   width: 15%;
@@ -33,11 +35,30 @@ button,
   }
 }
 
+.title,
+.buttonTop {
+  width: 50%;
+}
+
+.buttonReset {
+  width: 100%;
+}
+
+.buttonTop .start,
+.buttonReset .reset {
+  margin: 0%;
+  padding: 3%;
+  width: 30%;
+}
+
+// styling for the second and third buttons located at the .discover .result section.
+
 .secondSubmit,
 .thirdSubmit {
   background: $colFirst;
   border-radius: 15px;
-  padding: 2.5%;
+  padding: 1%;
+  width: 15%;
 
   &:hover {
     color: $whtTwo;
@@ -45,4 +66,12 @@ button,
     transform: scale(1.2);
     transition: ease-in-out .5s;
   }
+}
+
+// styling for inputs on hover located at .discover and .result
+
+input:hover,
+label:hover {
+  transform: scale(1.3);
+  transition: ease-in-out .5s;
 }

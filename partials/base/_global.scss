@@ -49,26 +49,34 @@ label {
 
 h1, h2, h3 {
   margin: 0%;
-	text-align: center;
+	text-align: left;
 	text-shadow: 2.5px 2px 10px $blk;
 }
 
 p {
-	@include fontProperty ($whtTwo, $fontSecond, 1.25rem, null)
+	@include fontProperty ($whtTwo, $fontSecond, 1.25rem, null);
+	color: $whtTwo;
 }
 
 h1 {
 	@include fontProperty ($colFirst, $fontFirst, 4.5rem, $bold);
 	text-transform: uppercase;
-	text-shadow: 2.5px 2px 10px $blk;
-  padding: 0 15%;
 }
 
 h2 {
-	@include fontProperty ($colFirst, $fontFirst, 1.5rem, $light);
+	@include fontProperty ($colFirst, $fontFirst, 2rem, $light);
 	padding: 2.5% 0;
 }
 
+h3 {
+	@include fontProperty ($colFirst, $fontSecond, 3rem, $light);
+	letter-spacing: 2px;
+}
+
+h4 {
+		@include fontProperty ($whtTwo, $fontSecond, 0.8rem, $light);
+}
+
 .wrapper {
-  margin: 0 15%;
+  margin: 0 10%;
 }
