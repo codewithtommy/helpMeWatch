@@ -172,11 +172,13 @@ $(`.formOne`).on(`submit`, function (event) {
 // SECTION: under .discover to .formTwo
 $(`.formTwo`).on(`submit`, function (event) {
   event.preventDefault();
-  $(`input[type="radio"]`).attr(`required`, `true`);
 
+  $(`input[type="radio"]`).attr(`required`, `true`);
+  $('.formTwo').css(`display`, 'none')
   $(`html, body`).animate({
     scrollTop: $(`#result`).offset().top
   }, 1000);
+
   // variable created for MOVIES with sub-choices: Drama or Comedy.
   const movieDramaChecked = ($('#movies:checked').val() && $('#drama:checked').val());
   const movieComedyChecked = ($('#movies:checked').val() && $('#comedy:checked').val());

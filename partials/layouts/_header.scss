@@ -1,4 +1,6 @@
 .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../assets/heroTheatreComp.jpg) no-repeat fixed;
+	background-size: cover;
   @include flexCenter (null, center, flex, null, null);
   height: 100vh;
 

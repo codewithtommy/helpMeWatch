@@ -42,7 +42,7 @@ h1 {
 h2 {
   color: #FF1494;
   font-family: "Archivo", sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: "300";
   padding: 2.5% 0;
 }
@@ -50,7 +50,7 @@ h2 {
 h3 {
   color: #FF1494;
   font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: "300";
   letter-spacing: 2px;
 }
@@ -323,6 +323,9 @@ label:hover {
 }
 
 .hero {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(../assets/heroTheatreComp.jpg) no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../assets/heroTheatreComp.jpg) no-repeat fixed;
+  background-size: cover;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -422,4 +425,12 @@ label:hover {
 
 .result .resultText h2 {
   padding: 0;
+}
+
+.copyright p {
+  padding-top: 5%;
+}
+
+.copyright span {
+  color: #FF1494;
 }
