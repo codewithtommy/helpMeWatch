@@ -16,3 +16,21 @@
 	flex-direction: $colu;
 	justify-content: $cent;
 }
+
+@mixin position ($pos, $top, $rig, $bot, $lef) {
+	position: $pos;
+  top: $top;
+  right: $rig;
+  bottom: $bot;
+	left: $lef;
+}
+
+
+// MISC
+
+@mixin buttonProp ($back, $brad, $bord) {
+	background: $back;
+	border-radius: $brad;
+	border: $bord;
+}
+

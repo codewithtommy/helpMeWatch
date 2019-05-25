@@ -1,0 +1,10 @@
+.filter {
+  background: $gry;
+
+  .formWrapper {
+    @include flexCenter (null, center, flex, null, space-evenly);
+    background: $whtTwo;
+    border-radius: 25px;
+    padding: 5% 20%;
+  }
+}

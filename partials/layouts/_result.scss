@@ -1,0 +1,11 @@
+.result {
+  background: $gry;
+
+  .resultContent {
+    @include flexCenter (null, center, flex, null, space-evenly);
+    background: $whtTwo;
+    border-radius: 25px;
+    padding: 5% 10%;
+    margin-top: 5%;
+  }
+}

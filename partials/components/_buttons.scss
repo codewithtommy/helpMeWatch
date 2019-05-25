@@ -2,3 +2,46 @@ button {
   margin: 0 auto;
   width: 15%;
 }
+
+button,
+.secondSubmit,
+.thirdSubmit {
+  border: transparent;
+  box-shadow: 2.5px 2px 10px $blk;
+}
+
+// styling for the top button located at the header/ .hero section.
+
+.buttonTop {
+
+  button {
+    background: $whtTwo;
+    border-radius: 25px;
+    color: $colFirst;
+    cursor: pointer;
+    padding: 1%;
+    text-transform: uppercase;
+    transition: all .5s;
+
+    &:hover {
+      color: $whtTwo;
+      background: #FF42A9;
+      transform: scale(1.2);
+      transition: ease-in-out .5s;
+    }
+  }
+}
+
+.secondSubmit,
+.thirdSubmit {
+  background: $colFirst;
+  border-radius: 15px;
+  padding: 2.5%;
+
+  &:hover {
+    color: $whtTwo;
+    background: $colFourth;
+    transform: scale(1.2);
+    transition: ease-in-out .5s;
+  }
+}

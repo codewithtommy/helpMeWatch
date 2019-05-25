@@ -118,13 +118,17 @@ $(`.start`).on(`click`, function (event) {
 
   // Append users with: Movie or TV Shows in the .discoverContainer section.
   $(`.formOne`).html (
-    `<input type="radio" id="movies" value="movies" name="genreMain"></input>
-    <label for="movies">Movies!</label>
+    `
+    <h2>Please Choose :(</h2>
+    <div class = "formWrapper">
+      <input type="radio" id="movies" value="movies" name="genreMain"></input>
+      <label for="movies">Movies!</label>
 
-    <input type="radio" id="tvShows" value="tvShows" name="genreMain"></input>
-    <label for="tvShows">TV Shows!</label>
+      <input type="radio" id="tvShows" value="tvShows" name="genreMain"></input>
+      <label for="tvShows">TV Shows!</label>
 
-    <input id="secondSubmit" class="secondSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>`
+      <input id="secondSubmit" class="secondSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
+    </div>`
   )
 })
 
@@ -145,31 +149,36 @@ $(`.formOne`).on(`submit`, function (event) {
   if ($(`#movies:checked`).val()) {
     $(`.formTwo`).html (
       // note: see if we can create a varible for these appended buttons to make it more DRY or re-factored.
-      `<input type="radio" id="drama" value="drama" name="genreSub"></input>
+      `
+      <h2>What do you feel like?</h2>
+      <div class = "formWrapper">
+      <input type="radio" id="drama" value="drama" name="genreSub"></input>
       <label for="drama">Feelin' Emotional?</label>
-
       <input type="radio" id="comedy" value="comedy" name="genreSub"></input>
       <label for="comedy">Need Some Laughs?</label>
-
-      <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>`
+      <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
+      </div>`
     );
     $('.formOne').css('display', 'none');
   } else if ($(`#tvShows:checked`).val()) {
     $(`.formTwo`).html (
-      `<input type="radio" id="drama" value="drama" name="genreSub"></input>
+      `
+      <h2>What's going to be?</h2>
+      <div class = "formWrapper">
+      <input type="radio" id="drama" value="drama" name="genreSub"></input>
       <label for="drama">Feelin' Emotional?</label>
 
       <input type="radio" id="comedy" value="comedy" name="genreSub"></input>
       <label for="comedy">Need Some Laughs?</label>
 
-      <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>`
+      <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>
+      </div>`
     );
     $('.formOne').css('display', 'none');
       
   }else{
-    alert('pick please');
+    alert(`Pssst! You need to pick!`);
   }
- 
 })
 // SECTION: under .discover to .formTwo
 $(`.formTwo`).on(`submit`, function (event) {
@@ -184,29 +193,23 @@ $(`.formTwo`).on(`submit`, function (event) {
   // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
   if (movieDramaChecked) {
       const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`)
-    $(`.result`).html(
-      // did some testing... seems like its pulling from the API drama/comedy hybrids
-      // find a way to get the images inserted in? Might have to use .attr
-      `<h2>${randomM.title}</h2>
-      <h3>${randomM.overview}</h3>`)
-    $(`.result`).append(moviePoster);
-    // reset button
-    $(`.result`).append(
-      `<a href="#hero">
-    <button>Reset</button>
-    </a>`)
+    $(`.resultContainer`).html(
+      `<div class="resultContent">
+        <h2>${randomM.title}</h2>
+        <h3>${randomM.overview}</h3>
+      </div>`
+    )
+      $(`.resultContainer`).append(moviePoster);
 
   } else if(movieComedyChecked){
       const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`)
-    $(`.result`).html(
-      `<h2>${randomM.title}</h2>
-      <h3>${randomM.overview}</h3>`) 
-    $(`.result`).append(moviePoster);
-    // reset button
-    $(`.result`).append(
-      `<a href="#hero">
-    <button>Reset</button>
-    </a>`)
+    $(`.resultContainer`).html(
+      `<div class="resultContent">
+        <h2>${randomM.title}</h2>
+        <h3>${randomM.overview}</h3>
+      </div>`
+    ) 
+      $(`.resultContainer`).append(moviePoster);
   };
 
   
@@ -215,36 +218,29 @@ $(`.formTwo`).on(`submit`, function (event) {
     $('.formTwo').css('display', 'none');
     
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`)
-    $(`.result`).html(
-      `<h2>${randomT.name}</h2>
-       <h3>${randomT.overview}</h3>`)
-
-    $(`.result`).append(tvPoster);
-    // reset button here
-    $(`.result`).append(
-    `<a href="#hero">
-    <button>Reset</button>
-    </a>`)
+    $(`.resultContainer`).html(
+      `<div class="resultContent">
+        <h2>${randomT.name}</h2>
+        <h3>${randomT.overview}</h3>
+      </div>`
+    )
+      $(`.resultContainer`).append(tvPoster);
 
   } else if (tvComedyChecked) {
     $('.formTwo').css('display', 'none');
 
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`)
-    $(`.result`).html(
-      `<h2>${randomT.name}</h2>
-      <h3>${randomT.overview}</h3>`)
-    $(`.result`).append(tvPoster);
-    // reset button
-    $(`.result`).append(
-      `<a href="#hero">
-    <button>Reset</button>
-    </a>`)
-
-
+    $(`.resultText`).html(
+      `<div class="resultContent">
+      <h2>${randomT.name}</h2>
+      <h3>${randomT.overview}</h3>
+      </div>`
+    )
+    $(`.resultImg`).append(tvPoster);
   }
   else{
-    alert('please pick');
-  }
+    alert(`Aw, looks like you haven't picked yet!`);
+  };
 })
 
 // init method holds anything that needs to be run at load times + even listeners.
