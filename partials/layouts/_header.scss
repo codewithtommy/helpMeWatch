@@ -3,7 +3,8 @@
   height: 100vh;
 
   .title,
-  .buttonTop {
+  .buttonTop,
+  .buttonReset {
     @include flexCenter (null, null, flex, column, center);
     text-align: center;
   }

@@ -100,16 +100,21 @@ movieShowApp.getMovies = function (){
 }
 
 
-
-
-
 // HEADER: start button on submit > scroll down to discover section.
+// resets quiz
+$(`#resetQuiz`).on(`click`,function(event){
+  location.reload();
+})
+// hide reset button
+$('#resetQuiz').css(`display`,'none')
 $(`.start`).on(`click`, function (event) {
   // Prevents button default
   event.preventDefault();
 
   // Disable button to prevent multiple submits
   $(`.start`).attr(`disabled`, true);
+  $(`.start`).css(`display`, 'none');
+  $(`#resetQuiz`).css(`display`,'initial');
 
   // Scroll to element .discover
   $(`html, body`).animate({
@@ -199,23 +204,23 @@ $(`.formTwo`).on(`submit`, function (event) {
   // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
   if (movieDramaChecked) {
       const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`).attr('alt',randomM.title)
-    $(`.resultContainer`).html(
-      `<div class="resultContent">
+    $(`.resultText`).html(
+      `
         <h2>${randomM.title}</h2>
         <h3>${randomM.overview}</h3>
-      </div>`
+      `
     )
-      $(`.resultContainer`).append(moviePoster);
+      $(`.resultImg`).append(moviePoster);
 
   } else if(movieComedyChecked){
-      const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`).attr('alt',randomM.title)
-    $(`.resultContainer`).html(
-      `<div class="resultContent">
+      const moviePoster = $('.resultImg').prepend($(`<img>`)).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`).attr('alt',randomM.title)
+    $(`.resultText`).html(
+      `
         <h2>${randomM.title}</h2>
         <h3>${randomM.overview}</h3>
-      </div>`
+      `
     ) 
-      $(`.resultContainer`).append(moviePoster);
+      $(`.resultImg`).append(moviePoster);
   }
 
   
@@ -224,23 +229,23 @@ $(`.formTwo`).on(`submit`, function (event) {
     $('.formTwo').css('display', 'none');
     
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt',randomT.name)
-    $(`.resultContainer`).html(
-      `<div class="resultContent">
+    $(`.resultText`).html(
+      `
         <h2>${randomT.name}</h2>
         <h3>${randomT.overview}</h3>
-      </div>`
+      `
     )
-      $(`.resultContainer`).append(tvPoster);
+      $(`.resultImg`).append(tvPoster);
 
   } else if (tvComedyChecked) {
     $('.formTwo').css('display', 'none');
 
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt', randomT.name)
     $(`.resultText`).html(
-      `<div class="resultContent">
+      `
         <h2>${randomT.name}</h2>
         <h3>${randomT.overview}</h3>
-      </div>`
+      `
     )
     $(`.resultImg`).append(tvPoster);
   };
