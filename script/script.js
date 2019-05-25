@@ -192,7 +192,7 @@ $(`.formTwo`).on(`submit`, function (event) {
 
   // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
   if (movieDramaChecked) {
-      const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`)
+      const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`).attr('alt',randomM.title)
     $(`.resultContainer`).html(
       `<div class="resultContent">
         <h2>${randomM.title}</h2>
@@ -202,7 +202,7 @@ $(`.formTwo`).on(`submit`, function (event) {
       $(`.resultContainer`).append(moviePoster);
 
   } else if(movieComedyChecked){
-      const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`)
+      const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`).attr('alt',randomM.title)
     $(`.resultContainer`).html(
       `<div class="resultContent">
         <h2>${randomM.title}</h2>
@@ -217,7 +217,7 @@ $(`.formTwo`).on(`submit`, function (event) {
     // hides selections
     $('.formTwo').css('display', 'none');
     
-    const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`)
+    const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt',randomT.name)
     $(`.resultContainer`).html(
       `<div class="resultContent">
         <h2>${randomT.name}</h2>
@@ -229,7 +229,7 @@ $(`.formTwo`).on(`submit`, function (event) {
   } else if (tvComedyChecked) {
     $('.formTwo').css('display', 'none');
 
-    const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`)
+    const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt', randomT.name)
     $(`.resultText`).html(
       `<div class="resultContent">
       <h2>${randomT.name}</h2>
@@ -237,9 +237,6 @@ $(`.formTwo`).on(`submit`, function (event) {
       </div>`
     )
     $(`.resultImg`).append(tvPoster);
-  }
-  else{
-    alert(`Aw, looks like you haven't picked yet!`);
   };
 })
 
