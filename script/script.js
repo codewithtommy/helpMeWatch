@@ -98,7 +98,7 @@ $(`.start`).on(`click`, function (event) {
   // Disable button to prevent multiple submits
   $(`.start`).attr(`disabled`, true);
   $(`.start`).css(`display`, 'none');
-  $(`#reset`).css(`display`,'initial');
+  $(`.reset`).css(`display`,'initial');
 
   // Scroll to element .discover
   $(`html, body`).animate({
@@ -189,22 +189,32 @@ $(`.formTwo`).on(`submit`, function (event) {
 
   // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
   if (movieDramaChecked) {
-      const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`).attr('alt',randomM.title)
-    $(`.resultText`).html(
-      `
-        <h3>${randomM.title}</h3>
-        <h4>${randomM.overview}</h4>
-      `
-    )
-      $(`.resultImg`).append(moviePoster);
+    const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`).attr('alt',randomM.title)
 
+    $(`.resultText`).html(
+      `<div class="resultContent">
+        <h3>${randomM.title}</h3>
+        <h4>${randomM.release_date}</h4>
+        <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
+        <h5>Overview</h5>
+        <p>${randomM.overview}</p>
+      </div>`
+    );
+
+    $(`.resultImg`).append(moviePoster);
+
+    // $(`.resultContainer`).css(`background-image`, `linear - gradient(rgba(0, 0, 0, 0), rgba(0, 0, , 1)), url(https://image.tmdb.org/t/p/w500${randomM.backdrop_path})`);
+      
   } else if(movieComedyChecked){
       const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomM.poster_path}`).attr('alt',randomM.title)
     $(`.resultText`).html(
-      `
+      `<div class="resultContent">
         <h3>${randomM.title}</h3>
-        <h4>${randomM.overview}</h4>
-      `
+        <h4>${randomM.release_date}</h4>
+        <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
+        <h5>Overview</h5>
+        <p>${randomM.overview}</p>
+      </div>`
     ) 
       $(`.resultImg`).append(moviePoster);
   }
@@ -216,10 +226,13 @@ $(`.formTwo`).on(`submit`, function (event) {
     
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt',randomT.name)
     $(`.resultText`).html(
-      `
+      `<div class="resultContent">
         <h3>${randomT.name}</h3>
-        <h4>${randomT.overview}</h4>
-      `
+        <h4>${randomM.release_date}</h4>
+        <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
+        <h5>Overview</h5>
+        <p>${randomT.overview}</p>
+      </div>`
     )
       $(`.resultImg`).append(tvPoster);
 
@@ -228,10 +241,13 @@ $(`.formTwo`).on(`submit`, function (event) {
 
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt', randomT.name)
     $(`.resultText`).html(
-      `
+      `<div class="resultContent">
         <h3>${randomT.name}</h3>
-        <h4>${randomT.overview}</h4>
-      `
+        <h4>${randomM.release_date}</h4>
+        <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
+        <h5>Overview</h5>
+        <p>${randomT.overview}</p>
+      </div>`
     )
     $(`.resultImg`).append(tvPoster);
   };

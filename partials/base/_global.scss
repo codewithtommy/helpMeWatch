@@ -47,7 +47,7 @@ label {
 	cursor: pointer;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h5 {
   margin: 0%;
 	text-align: left;
 	text-shadow: 2.5px 2px 10px $blk;
@@ -77,6 +77,19 @@ h4 {
 		@include fontProperty ($whtTwo, $fontSecond, 0.8rem, $light);
 }
 
+h5 {
+		@include fontProperty ($colFirst, $fontSecond, 2rem, $light);
+}
+
 .wrapper {
   margin: 0 10%;
+}
+
+// media for tabletSmall @ 768px 
+
+@include tabletSmall {
+
+  .wrapper {
+		margin: 0 5%;
+	}
 }

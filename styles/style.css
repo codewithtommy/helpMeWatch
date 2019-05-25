@@ -18,7 +18,7 @@ label {
   cursor: pointer;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h5 {
   margin: 0%;
   text-align: left;
   text-shadow: 2.5px 2px 10px #000000;
@@ -62,8 +62,21 @@ h4 {
   font-weight: "300";
 }
 
+h5 {
+  color: #FF1494;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: "300";
+}
+
 .wrapper {
   margin: 0 10%;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    margin: 0 5%;
+  }
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
@@ -280,20 +293,20 @@ button,
   transition: ease-in-out .5s;
 }
 
-.title,
-.buttonTop {
+.title {
   width: 50%;
 }
 
+.buttonTop,
 .buttonReset {
-  width: 100%;
+  width: 50%;
 }
 
 .buttonTop .start,
 .buttonReset .reset {
   margin: 0%;
   padding: 3%;
-  width: 30%;
+  width: 50%;
 }
 
 .secondSubmit,
@@ -322,6 +335,13 @@ label:hover {
   transition: ease-in-out .5s;
 }
 
+@media only screen and (max-width: 768px) {
+  .buttonTop,
+  .buttonReset {
+    width: 100%;
+  }
+}
+
 .hero {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(../assets/heroTheatreComp.jpg) no-repeat fixed;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../assets/heroTheatreComp.jpg) no-repeat fixed;
@@ -343,6 +363,12 @@ label:hover {
   padding: 0%;
   text-align: left;
   text-shadow: 2.5px 2px 10px #000000;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    width: 100%;
+  }
 }
 
 .discover {
@@ -400,6 +426,11 @@ label:hover {
   display: flex;
 }
 
+.result .resultContainer .resultContent,
+.result .resultContainer .resultImg {
+  padding-top: 5%;
+}
+
 .result .resultContainer .resultText {
   padding-right: 10%;
   width: 70%;
@@ -425,6 +456,34 @@ label:hover {
 
 .result .resultText h2 {
   padding: 0;
+}
+
+.result .resultText p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.result .resultText i {
+  color: #FCFF14;
+}
+
+@media only screen and (max-width: 768px) {
+  .result .resultContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .result .resultContainer .resultText {
+    padding: 0%;
+    width: 100%;
+  }
+  .result .resultContainer .resultImg {
+    width: 100%;
+  }
 }
 
 .copyright p {

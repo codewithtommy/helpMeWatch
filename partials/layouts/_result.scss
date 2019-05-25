@@ -4,6 +4,11 @@
   .resultContainer{
     display: flex;
 
+    .resultContent,
+    .resultImg {
+      padding-top: 5%;
+    }
+
     .resultText{
       padding-right: 10%;
       width: 70%;
@@ -20,6 +25,36 @@
 
     h2{
       padding:0;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    i {
+      color: $colThird;
+    }
+  }
+}
+
+// media for tabletSmall  @ 768px
+
+@include tabletSmall {
+
+  .result {
+
+    .resultContainer {
+      @include flexCenter (null, null, flex, column, null);
+
+      .resultText {
+        padding: 0%;
+        width: 100%;
+      }
+
+      .resultImg {
+        width: 100%;
+      }
     }
   }
 }

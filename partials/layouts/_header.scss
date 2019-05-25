@@ -14,3 +14,12 @@
     }
   }
 }
+
+// media for tabletSmall @ 768px
+
+@include tabletSmall {
+  
+  .title {
+    width: 100%;
+  }
+}
