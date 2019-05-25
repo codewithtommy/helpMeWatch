@@ -135,6 +135,7 @@ $(`.start`).on(`click`, function (event) {
 // SECTION: under .discover to .formOne
 $(`.formOne`).on(`submit`, function (event) {
   event.preventDefault();
+  $(`input[type="radio"]`).attr(`required`, `true`);
   // disabled "submit" button in the first set of choice selections.
   // $(`.secondSubmit`).attr(`disabled`, true);
   // disabled "input[type="radio"] reselection in the first set of choice selections
@@ -154,8 +155,10 @@ $(`.formOne`).on(`submit`, function (event) {
       <div class = "formWrapper">
       <input type="radio" id="drama" value="drama" name="genreSub"></input>
       <label for="drama">Feelin' Emotional?</label>
+
       <input type="radio" id="comedy" value="comedy" name="genreSub"></input>
       <label for="comedy">Need Some Laughs?</label>
+
       <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
       </div>`
     );
@@ -174,22 +177,25 @@ $(`.formOne`).on(`submit`, function (event) {
       <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>
       </div>`
     );
-    $('.formOne').css('display', 'none');
-      
-  }else{
-    alert(`Pssst! You need to pick!`);
-  }
+    $('.formOne').css('display', 'none');  
+  };
 })
 // SECTION: under .discover to .formTwo
 $(`.formTwo`).on(`submit`, function (event) {
   event.preventDefault();
+  $(`input[type="radio"]`).attr(`required`, `true`);
+
+  $(`html, body`).animate({
+    scrollTop: $(`#result`).offset().top
+  }, 1000);
   // variable created for MOVIES with sub-choices: Drama or Comedy.
   const movieDramaChecked = ($('#movies:checked').val() && $('#drama:checked').val());
   const movieComedyChecked = ($('#movies:checked').val() && $('#comedy:checked').val());
   // tv variables created for Drama/comedy
   const tvDramaChecked = ($('#tvShows:checked').val() && $('#drama:checked').val());
   const tvComedyChecked = ($('#tvShows:checked').val() && $('#comedy:checked').val());
-
+// if nothing is checked
+   
   // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
   if (movieDramaChecked) {
       const moviePoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500'+`${randomM.poster_path}`).attr('alt',randomM.title)
@@ -210,7 +216,7 @@ $(`.formTwo`).on(`submit`, function (event) {
       </div>`
     ) 
       $(`.resultContainer`).append(moviePoster);
-  };
+  }
 
   
   if(tvDramaChecked){
@@ -232,13 +238,19 @@ $(`.formTwo`).on(`submit`, function (event) {
     const tvPoster = $(`<img>`).attr('src', 'https://image.tmdb.org/t/p/w500' + `${randomT.poster_path}`).attr('alt', randomT.name)
     $(`.resultText`).html(
       `<div class="resultContent">
-      <h2>${randomT.name}</h2>
-      <h3>${randomT.overview}</h3>
+        <h2>${randomT.name}</h2>
+        <h3>${randomT.overview}</h3>
       </div>`
     )
     $(`.resultImg`).append(tvPoster);
   };
+  const reset = $('resetQuiz');
+  $(reset).on('click', function (event) {
+    event.preventDefault();
+    
+  })
 })
+
 
 // init method holds anything that needs to be run at load times + even listeners.
 movieShowApp.init = function (){
