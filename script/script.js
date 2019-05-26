@@ -235,7 +235,7 @@ $(`.formTwo`).on(`submit`, function (event) {
     $(`.resultText`).html(
       `<div class="resultContent animated fadeInDown">
         <h3>${randomT.name}</h3>
-        <h4>${randomT.release_date}</h4>
+        <h4>${randomT.first_air_date}</h4>
         <h4>${randomT.vote_average} <i class="far fa-star"></i></h4>
         <h5>Overview</h5>
         <p>${randomT.overview}</p>
@@ -253,7 +253,7 @@ $(`.formTwo`).on(`submit`, function (event) {
     $(`.resultText`).html(
       `<div class="resultContent animated fadeInDown">
         <h3>${randomT.name}</h3>
-        <h4>${randomT.release_date}</h4>
+        <h4>${randomT.first_air_date}</h4>
         <h4>${randomT.vote_average} <i class="far fa-star"></i></h4>
         <h5>Overview</h5>
         <p>${randomT.overview}</p>
