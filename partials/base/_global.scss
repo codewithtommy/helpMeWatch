@@ -5,10 +5,12 @@ $fontSecond: 'Montserrat', sans-serif;
 
 // COLOR PALETTE 
 
-$colFirst: #FF1494;
+// $colFirst: #FF1494;
+$colFirst: #E54162;
 $colSecond: #14FF23;
 $colThird: #FCFF14;
-$colFourth: #FE71BE;
+// $colFourth: #FE71BE;
+$colFourth: #F16A84;
 $colCompliment: #AEFF14;
 
 $wht: #FFFFFF;
@@ -45,6 +47,10 @@ input,
 label {
 	transition: all .5s;
 	cursor: pointer;
+}
+
+input:focus {
+	outline: $colFirst;
 }
 
 h1, h2, h3, h5 {
@@ -91,5 +97,37 @@ h5 {
 
   .wrapper {
 		margin: 0 5%;
+	}
+}
+
+// media for mobileLarge @ 425px {
+
+@include mobileLarge {
+
+	h2 {
+		font-size: 2rem;
+		text-align: center;
+		padding: 5% 0%;
+	}
+
+	label {
+		font-size: 0.8rem;
+	}
+}
+
+// media for mobileSmall @ 425px {
+
+@include mobileSmall {
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	h5 {
+		font-size: 1.5rem;
 	}
 }

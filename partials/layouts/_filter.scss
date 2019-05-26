@@ -11,3 +11,15 @@
 }
 
 // NOTE: refer to _discover.scss for .formTwo styling... which is the same as .formOne. They are both targetted together for DRY coding.
+
+// media for mobileLarge @ 425px {
+
+@include mobileLarge {
+
+  .filter {
+
+    .formWrapper input[type="radio"] {
+      margin-right: 5%;
+    }
+  }
+}

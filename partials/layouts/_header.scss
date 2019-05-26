@@ -18,8 +18,26 @@
 // media for tabletSmall @ 768px
 
 @include tabletSmall {
-  
+
   .title {
     width: 100%;
+  }
+}
+
+// media for mobileLarge @ 425px {
+
+@include mobileLarge {
+  
+  .hero .title {
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 }

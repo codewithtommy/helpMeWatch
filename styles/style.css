@@ -18,6 +18,10 @@ label {
   cursor: pointer;
 }
 
+input:focus {
+  outline: #E54162;
+}
+
 h1, h2, h3, h5 {
   margin: 0%;
   text-align: left;
@@ -32,7 +36,7 @@ p {
 }
 
 h1 {
-  color: #FF1494;
+  color: #E54162;
   font-family: "Archivo", sans-serif;
   font-size: 4.5rem;
   font-weight: "700";
@@ -40,7 +44,7 @@ h1 {
 }
 
 h2 {
-  color: #FF1494;
+  color: #E54162;
   font-family: "Archivo", sans-serif;
   font-size: 2.5rem;
   font-weight: "300";
@@ -48,7 +52,7 @@ h2 {
 }
 
 h3 {
-  color: #FF1494;
+  color: #E54162;
   font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   font-weight: "300";
@@ -63,7 +67,7 @@ h4 {
 }
 
 h5 {
-  color: #FF1494;
+  color: #E54162;
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   font-weight: "300";
@@ -76,6 +80,29 @@ h5 {
 @media only screen and (max-width: 768px) {
   .wrapper {
     margin: 0 5%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 5% 0%;
+  }
+  label {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.5rem;
   }
 }
 
@@ -275,7 +302,7 @@ button,
 .buttonReset button {
   background: #FAFAFA;
   border-radius: 25px;
-  color: #FF1494;
+  color: #E54162;
   cursor: pointer;
   padding: 1%;
   text-transform: uppercase;
@@ -286,7 +313,7 @@ button,
 .buttonTop button:hover,
 .buttonReset button:hover {
   color: #FAFAFA;
-  background: #FF42A9;
+  background: #F16A84;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   -webkit-transition: ease-in-out .5s;
@@ -311,7 +338,7 @@ button,
 
 .secondSubmit,
 .thirdSubmit {
-  background: #FF1494;
+  background: #E54162;
   border-radius: 15px;
   padding: 1%;
   width: 15%;
@@ -320,7 +347,7 @@ button,
 .secondSubmit:hover,
 .thirdSubmit:hover {
   color: #FAFAFA;
-  background: #FE71BE;
+  background: #F16A84;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   -webkit-transition: ease-in-out .5s;
@@ -339,6 +366,37 @@ label:hover {
   .buttonTop,
   .buttonReset {
     width: 100%;
+  }
+  .buttonTop .start:hover,
+  .buttonTop .reset:hover,
+  .buttonReset .start:hover,
+  .buttonReset .reset:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .secondSubmit:hover,
+  .thirdSubmit:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  input:hover,
+  label:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: ease-in-out .5s;
+    transition: ease-in-out .5s;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .hero .buttonTop .start,
+  .hero .buttonReset .reset {
+    width: 100%;
+  }
+  .secondSubmit,
+  .thirdSubmit {
+    font-size: 0.8rem;
+    width: 30%;
   }
 }
 
@@ -368,6 +426,17 @@ label:hover {
 @media only screen and (max-width: 768px) {
   .title {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .hero .title h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .hero .title p {
+    font-size: 1rem;
+    text-align: center;
   }
 }
 
@@ -416,6 +485,12 @@ label:hover {
   padding: 5%;
 }
 
+@media only screen and (max-width: 425px) {
+  .filter .formWrapper input[type="radio"] {
+    margin-right: 5%;
+  }
+}
+
 .result {
   background: #404040;
 }
@@ -438,6 +513,11 @@ label:hover {
 
 .result .resultContainer .resultImg {
   width: 30%;
+}
+
+.result .resultContainer .resultImg img {
+  -webkit-box-shadow: 10px 10px 15px #E54162;
+          box-shadow: 10px 10px 15px #E54162;
 }
 
 .result .resultText {
@@ -491,5 +571,21 @@ label:hover {
 }
 
 .copyright span {
-  color: #FF1494;
+  color: #E54162;
+}
+
+@media only screen and (max-width: 425px) {
+  .copyright p {
+    font-size: 1rem;
+    margin: 0%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .copyright p {
+    font-size: 0.8rem;
+    margin: 0%;
+    text-align: center;
+  }
 }

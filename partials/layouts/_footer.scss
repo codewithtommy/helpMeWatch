@@ -8,3 +8,31 @@
     color: $colFirst;
   }
 }
+
+// media for mobileLarge @ 425px {
+
+@include mobileLarge {
+
+  .copyright {
+
+    p {
+      font-size: 1rem;
+      margin: 0%;
+      text-align: center;
+    }
+  }
+}
+
+// media for mobileLarge @ 320px {
+
+@include mobileLarge {
+
+  .copyright {
+
+    p {
+      font-size: 0.8rem;
+      margin: 0%;
+      text-align: center;
+    }
+  }
+}

@@ -28,7 +28,7 @@ button,
 
     &:hover {
       color: $whtTwo;
-      background: #FF42A9;
+      background:$colFourth;
       transform: scale(1.2);
       transition: ease-in-out .5s;
     }
@@ -83,5 +83,43 @@ label:hover {
   .buttonTop,
   .buttonReset {
     width: 100%;
+
+    .start:hover,
+    .reset:hover {
+      transform: none;
+    }
+  }
+
+  .secondSubmit,
+  .thirdSubmit {
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  input:hover,
+  label:hover {
+    transform: scale(1.1);
+    transition: ease-in-out .5s;
+  }
+}
+
+// media for mobileLarge @ 425px {
+
+@include mobileLarge {
+
+  .hero {
+
+    .buttonTop .start,
+    .buttonReset .reset {
+      width: 100%;
+    }
+  }
+
+  .secondSubmit,
+  .thirdSubmit {
+    font-size: 0.8rem;
+    width: 30%;
   }
 }
