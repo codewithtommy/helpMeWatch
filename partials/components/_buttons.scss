@@ -19,8 +19,8 @@ button,
 
   button {
     background: $whtTwo;
-    border-radius: 25px;
-    color: $colFirst;
+    border-radius: 15px;
+    color: $gry;
     cursor: pointer;
     padding: 1%;
     text-transform: uppercase;
@@ -28,7 +28,7 @@ button,
 
     &:hover {
       color: $whtTwo;
-      background:$colFourth;
+      background:$colCompliment;
       transform: scale(1.2);
       transition: ease-in-out .5s;
     }
@@ -62,7 +62,7 @@ button,
 
   &:hover {
     color: $whtTwo;
-    background: $colFourth;
+    background: $colCompliment;
     transform: scale(1.2);
     transition: ease-in-out .5s;
   }

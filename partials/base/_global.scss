@@ -5,21 +5,16 @@ $fontSecond: 'Montserrat', sans-serif;
 
 // COLOR PALETTE 
 
-// $colFirst: #FF1494;
-$colFirst: #E54162;
-$colSecond: #14FF23;
-$colThird: #FCFF14;
-// $colFourth: #FE71BE;
-$colFourth: #F16A84;
-$colCompliment: #AEFF14;
+$colFirst: #FFBA39;
+$colSecond: #523AB5;
+$colThird: #25A597;
+$colFourth: #3560AF;
+$colCompliment: #567BBF;
 
 $wht: #FFFFFF;
 $blk: #000000;
 $gry: #404040;
 $whtTwo: #FAFAFA;
-
-// $buttonHover: #FFDCAA;
-// $shadow: #C0C0C0;
 
 // LINEWEIGHT
 
@@ -53,10 +48,14 @@ input:focus {
 	outline: $colFirst;
 }
 
-h1, h2, h3, h5 {
+label {
+	color: $gry;
+}
+
+h2, h3, h5 {
   margin: 0%;
 	text-align: left;
-	text-shadow: 2.5px 2px 10px $blk;
+	text-shadow: 1px 1px 2px $blk;
 }
 
 p {
@@ -65,13 +64,14 @@ p {
 }
 
 h1 {
-	@include fontProperty ($colFirst, $fontFirst, 4.5rem, $bold);
+	@include fontProperty ($whtTwo, $fontFirst, 4.5rem, $bold);
 	text-transform: uppercase;
+	text-shadow: 2.5px 2.5px 2px $blk;
 }
 
 h2 {
 	@include fontProperty ($colFirst, $fontFirst, 2.5rem, $light);
-	padding: 2.5% 0;
+	padding: 2.5% 0%;
 }
 
 h3 {
@@ -88,7 +88,7 @@ h5 {
 }
 
 .wrapper {
-  margin: 0 10%;
+  margin: 0% 10%;
 }
 
 // media for tabletSmall @ 768px 
@@ -96,7 +96,7 @@ h5 {
 @include tabletSmall {
 
   .wrapper {
-		margin: 0 5%;
+		margin: 0% 5%;
 	}
 }
 

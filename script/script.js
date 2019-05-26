@@ -82,21 +82,20 @@ movieShowApp.getMovies = function (){
 }
 
 // HEADER: start button on submit > scroll down to discover section.
-
-// resets quiz
+// resets quiz upon click on the reset button
 $(`#reset`).on(`click`,function(event){
   location.reload();
 });
 
-// hide reset button
-$('#reset').css(`display`,'none')
+// hide reset button after clicking on it
+$('#reset').css(`display`,'none');
 
 // SECTION: .start function
 $(`.start`).on(`click`, function (event) {
-  // prevents button default
+  // prevents button defaults
   event.preventDefault();
 
-  // disable button to prevent multiple submits
+  // disable start button to prevent multiple clicks/ submits and also hide it after clicking it so the reset button can show up in it's spot.
   $(`.start`).attr(`disabled`, true);
   $(`.start`).css(`display`, 'none');
   $(`.reset`).css(`display`,'initial');
@@ -109,8 +108,8 @@ $(`.start`).on(`click`, function (event) {
   // append users with: Movie or TV Shows in the .discoverContainer section.
   $(`.formOne`).html (
     `
-    <h2>What Would It Be?</h2>
-    <div class = "formWrapper">
+    <h2 class="animated fadeInDown">What Would It Be?</h2>
+    <div class = "formWrapper animated fadeIn">
       <input type="radio" id="movies" value="movies" name="genreMain"></input>
       <label for="movies">Movies!</label>
 
@@ -124,11 +123,9 @@ $(`.start`).on(`click`, function (event) {
 
 // SECTION: under .discover to .formOne
 $(`.formOne`).on(`submit`, function (event) {
-
   event.preventDefault();
 
   $(`input[type="radio"]`).attr(`required`, `true`);
-
   $(`html, body`).animate({
     scrollTop: $(`#filter`).offset().top
   }, 1000);
@@ -136,10 +133,9 @@ $(`.formOne`).on(`submit`, function (event) {
   // IF input[type="movies"] is checked append/ html to .formTwo
   if ($(`#movies:checked`).val()) {
     $(`.formTwo`).html (
-      // note: see if we can create a varible for these appended buttons to make it more DRY or re-factored.
       `
-      <h2>What Do You Feel Like?</h2>
-      <div class = "formWrapper">
+      <h2 class="animated fadeInDown">What Do You Feel Like?</h2>
+      <div class = "formWrapper animated fadeIn">
       <input type="radio" id="drama" value="drama" name="genreSub"></input>
       <label for="drama">Feelin' Emotional?</label>
 
@@ -149,24 +145,23 @@ $(`.formOne`).on(`submit`, function (event) {
       <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
       </div>`
     );
-
+    // make .formOne disappear after making selecting a choice.
     $(`.formOne`).css(`display`, `none`);
 
   } else if ($(`#tvShows:checked`).val()) {
     $(`.formTwo`).html (
       `
-      <h2>What's going to be?</h2>
-      <div class = "formWrapper">
+      <h2 class=""animated fadeInDown>What's going to be?</h2>
+      <div class = "formWrapper animated fadeIn">
       <input type="radio" id="drama" value="drama" name="genreSub"></input>
-      <label for="drama">Feelin' Emotional?</label>
+      <label for="drama">Need them Feels?</label>
 
       <input type="radio" id="comedy" value="comedy" name="genreSub"></input>
-      <label for="comedy">Need Some Laughs?</label>
+      <label for="comedy">Giggles?</label>
 
       <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>
       </div>`
     );
-
     $(`.formOne`).css(`display`, `none`);  
   };
 })
@@ -175,9 +170,7 @@ $(`.formOne`).on(`submit`, function (event) {
 $(`.formTwo`).on(`submit`, function (event) {
   event.preventDefault();
   
-  // $(`.formTwo`).css(`display`, `none`)
   $(`input[type="radio"]`).attr(`required`, `true`);
-
   $(`html, body`).animate({
     scrollTop: $(`#result`).offset().top
   }, 1000);
@@ -190,14 +183,19 @@ $(`.formTwo`).on(`submit`, function (event) {
   const tvDramaChecked = ($(`#tvShows:checked`).val() && $(`#drama:checked`).val());
   const tvComedyChecked = ($(`#tvShows:checked`).val() && $(`#comedy:checked`).val());
 
-  // IF Movies && Drama are checked OR Movies && Comedy are checked... append...
+  // IF Movies && Drama are checked OR Movies && Comedy are checked... append the following under:
   if (movieDramaChecked) {
+    // hide .formTwo after making appropriate selections.
     $(`.formTwo`).css(`display`, `none`);
     
-    const moviePoster = $(`<img>`).attr(`src`, `https://image.tmdb.org/t/p/w500`+`${randomM.poster_path}`).attr(`alt`,randomM.title)
+    // variable created to append movie src/ url AND alt text together so we can call for both of them.
+    const moviePoster = $(`<img>`)
+    .attr(`src`,`https://image.tmdb.org/t/p/w500`+`${randomM.poster_path}`)
+    .attr(`alt`,randomM.title)
 
+    // append all the information related to the movie/tv show  to .resultText.
     $(`.resultText`).html(
-      `<div class="resultContent">
+      `<div class="resultContent animated fadeInDown">
         <h3>${randomM.title}</h3>
         <h4>${randomM.release_date}</h4>
         <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
@@ -206,18 +204,17 @@ $(`.formTwo`).on(`submit`, function (event) {
       </div>`
     );
 
-    $(`.resultImg`).append(moviePoster);
+    // append all image related movie/ tv shows to their respective divs.
+    $(`.resultImg`).append(moviePoster).addClass(`animated fadeInDown`);
+    $(`.result`).css(`background-image`, `url(https://image.tmdb.org/t/p/original${randomM.backdrop_path})`);
 
-    // $(`.resultContainer`).css(`background-image`, `linear - gradient(rgba(0, 0, 0, 0), rgba(0, 0, , 1)), url(https://image.tmdb.org/t/p/w500${randomM.backdrop_path})`);
-    // NOTE: line 207... you can remove it... was going to test out the backdrop image.
-      
   } else if(movieComedyChecked){
     $(`.formTwo`).css(`display`, `none`);
     
     const moviePoster = $(`<img>`).attr(`src`, `https://image.tmdb.org/t/p/w500`+`${randomM.poster_path}`).attr(`alt`,randomM.title)
 
     $(`.resultText`).html(
-      `<div class="resultContent">
+      `<div class="resultContent animated fadeInDown">
         <h3>${randomM.title}</h3>
         <h4>${randomM.release_date}</h4>
         <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
@@ -225,25 +222,28 @@ $(`.formTwo`).on(`submit`, function (event) {
         <p>${randomM.overview}</p>
       </div>`
     );
-      $(`.resultImg`).append(moviePoster);
+    
+    $(`.resultImg`).append(moviePoster).addClass(`animated fadeInDown`);
+    $(`.result`).css(`background-image`, `url(https://image.tmdb.org/t/p/original${randomM.backdrop_path})`);
   };
 
   if(tvDramaChecked) {
-    // hides selections
     $(`.formTwo`).css(`display`, `none`);
     
     const tvPoster = $(`<img>`).attr(`src`, `https://image.tmdb.org/t/p/w500` + `${randomT.poster_path}`).attr(`alt`,randomT.name)
 
     $(`.resultText`).html(
-      `<div class="resultContent">
+      `<div class="resultContent animated fadeInDown">
         <h3>${randomT.name}</h3>
-        <h4>${randomM.release_date}</h4>
-        <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
+        <h4>${randomT.release_date}</h4>
+        <h4>${randomT.vote_average} <i class="far fa-star"></i></h4>
         <h5>Overview</h5>
         <p>${randomT.overview}</p>
       </div>`
     );
-      $(`.resultImg`).append(tvPoster);
+    
+    $(`.resultImg`).append(tvPoster).addClass(`animated fadeInDown`);
+    $(`.result`).css(`background-image`, `url(https://image.tmdb.org/t/p/original${randomT.backdrop_path})`);
 
   } else if (tvComedyChecked) {
     $(`.formTwo`).css(`display`, `none`);
@@ -251,15 +251,17 @@ $(`.formTwo`).on(`submit`, function (event) {
     const tvPoster = $(`<img>`).attr(`src`, `https://image.tmdb.org/t/p/w500` + `${randomT.poster_path}`).attr(`alt`, randomT.name)
 
     $(`.resultText`).html(
-      `<div class="resultContent">
+      `<div class="resultContent animated fadeInDown">
         <h3>${randomT.name}</h3>
-        <h4>${randomM.release_date}</h4>
-        <h4>${randomM.vote_average} <i class="far fa-star"></i></h4>
+        <h4>${randomT.release_date}</h4>
+        <h4>${randomT.vote_average} <i class="far fa-star"></i></h4>
         <h5>Overview</h5>
         <p>${randomT.overview}</p>
       </div>`
     );
-    $(`.resultImg`).append(tvPoster);
+
+    $(`.resultImg`).append(tvPoster).addClass(`animated fadeInDown`);
+    $(`.result`).css(`background-image`, `url(https://image.tmdb.org/t/p/original${randomT.backdrop_path})`);
   };
 
   const reset = $(`.reset`);
@@ -269,13 +271,11 @@ $(`.formTwo`).on(`submit`, function (event) {
 })
 
 // init method holds anything that needs to be run at load times + even listeners.
-
 movieShowApp.init = function (){
   movieShowApp.getMovies()
 }
 
 // document READY. Wait till everything is loaded successfully.
-
 $(function () {
   // start/ begin movieShowApp
   movieShowApp.init();

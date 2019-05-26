@@ -1,17 +1,22 @@
 .result {
-  background: $gry;
-
+  // background: $gry;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
   .resultContainer{
-    display: flex;
-
-    .resultContent,
-    .resultImg {
-      padding-top: 5%;
-    }
+    @include flexCenter (null, center, flex, null, null);
 
     .resultText{
-      padding-right: 10%;
+      padding-right: 5%;
       width: 70%;
+    }
+
+    .resultContent {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px $blk;
+      padding: 4.5%;
     }
 
     .resultImg{
@@ -19,7 +24,8 @@
     }
 
     .resultImg img {
-      box-shadow: 10px 10px 15px $colFirst;
+      box-shadow: 5px 5px 15px $blk;
+      margin: 15% 0%;
     }
   }
   
@@ -37,7 +43,7 @@
     }
 
     i {
-      color: $colThird;
+      color: $colFirst;
     }
   }
 }

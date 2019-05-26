@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../assets/heroTheatreComp.jpg) no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../assets/heroPopcornComp.jpg) no-repeat fixed;
 	background-size: cover;
   @include flexCenter (null, center, flex, null, null);
   height: 100vh;
@@ -8,9 +8,9 @@
     padding: 0%;
 
     p {
+      color: $gry;
       padding: 0%;
       text-align: left;
-      text-shadow: 2.5px 2px 10px $blk;
     }
   }
 }
