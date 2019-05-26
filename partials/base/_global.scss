@@ -38,20 +38,6 @@ img {
 	width: 100%;
 }
 
-input,
-label {
-	transition: all .5s;
-	cursor: pointer;
-}
-
-input:focus {
-	outline: $colFirst;
-}
-
-label {
-	color: $gry;
-}
-
 h2, h3, h5 {
   margin: 0%;
 	text-align: left;
@@ -89,6 +75,24 @@ h5 {
 
 .wrapper {
   margin: 0% 10%;
+}
+
+input,
+label {
+	transition: all .5s;
+	cursor: pointer;
+}
+
+input:focus {
+	outline: $colFirst;
+}
+
+label {
+	color: $gry;
+}
+
+a {
+	text-decoration: none;
 }
 
 // media for tabletSmall @ 768px 

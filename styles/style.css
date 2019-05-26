@@ -11,21 +11,6 @@ img {
   width: 100%;
 }
 
-input,
-label {
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  cursor: pointer;
-}
-
-input:focus {
-  outline: #FFBA39;
-}
-
-label {
-  color: #404040;
-}
-
 h2, h3, h5 {
   margin: 0%;
   text-align: left;
@@ -80,6 +65,25 @@ h5 {
 
 .wrapper {
   margin: 0% 10%;
+}
+
+input,
+label {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: #FFBA39;
+}
+
+label {
+  color: #404040;
+}
+
+a {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -587,6 +591,10 @@ label:hover {
 
 .copyright span {
   color: #FFBA39;
+}
+
+.copyright span:hover {
+  color: #567BBF;
 }
 
 @media only screen and (max-width: 425px) {
