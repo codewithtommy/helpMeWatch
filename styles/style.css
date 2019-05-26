@@ -521,7 +521,7 @@ label:hover {
 }
 
 .result .resultContainer .resultContent {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
   -webkit-box-shadow: 5px 5px 15px #000000;
           box-shadow: 5px 5px 15px #000000;
@@ -615,4 +615,3 @@ label:hover {
     text-align: center;
   }
 }
-/*# sourceMappingURL=style.css.map */
