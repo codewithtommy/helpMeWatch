@@ -20,6 +20,13 @@
   <body>
     <!-- HEADER: hero -->
     <header class="hero" id="hero">
+      <!-- Note: boxOne & boxTwo are set up here for rellax popcorn effect -->
+      <div class="boxOne rellax" data-rellax-speed="5">
+        <img src="../assets/popcornBigger.png" alt="">
+      </div>
+      <div class="boxTwo rellax" data-rellax-speed="15">
+        <img src="../assets/popcornSmaller.png" alt="">
+      </div>
       <div class="wrapper">
         <div class="title animated fadeInLeft">
           <h1>Help Me Watch!</h1>
@@ -71,5 +78,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- SCRIPT: This is for JQUERY/ JAVASCRIPT SCRIPTS! -->
     <script src="./script/script.js"></script>
+    <script src="./script/rellax.js"></script>
+
+    <script>
+      let rellax = new Rellax(`.rellax`);
+    </script>
   </body>
 </html>

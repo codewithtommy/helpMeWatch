@@ -432,6 +432,19 @@ label:hover {
   text-align: left;
 }
 
+.boxOne,
+.boxTwo {
+  position: absolute;
+}
+
+.boxOne {
+  top: -5%;
+}
+
+.boxTwo {
+  top: 5%;
+}
+
 @media only screen and (max-width: 768px) {
   .title {
     width: 100%;
@@ -615,3 +628,4 @@ label:hover {
     text-align: center;
   }
 }
+/*# sourceMappingURL=style.css.map */

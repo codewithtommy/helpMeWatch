@@ -15,6 +15,21 @@
   }
 }
 
+// styling for rellax effect.
+
+.boxOne,
+.boxTwo {
+  position: absolute;
+}
+
+.boxOne {
+  top: -5%;
+}
+
+.boxTwo {
+  top: 5%;
+}
+
 // media for tabletSmall @ 768px
 
 @include tabletSmall {
