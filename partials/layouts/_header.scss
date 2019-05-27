@@ -37,6 +37,11 @@
   .title {
     width: 100%;
   }
+
+  .boxOne,
+  .boxTwo {
+    top: initial;
+  }
 }
 
 // media for mobileLarge @ 425px {

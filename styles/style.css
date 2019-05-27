@@ -449,6 +449,10 @@ label:hover {
   .title {
     width: 100%;
   }
+  .boxOne,
+  .boxTwo {
+    top: initial;
+  }
 }
 
 @media only screen and (max-width: 425px) {
