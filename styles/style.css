@@ -14,7 +14,6 @@ img {
 h2, h3, h5 {
   margin: 0%;
   text-align: left;
-  text-shadow: 1px 1px 2px #000000;
 }
 
 p {
@@ -29,8 +28,9 @@ h1 {
   font-family: "Archivo", sans-serif;
   font-size: 4.5rem;
   font-weight: "700";
+  margin-bottom: 5%;
   text-transform: uppercase;
-  text-shadow: 2.5px 2.5px 2px #000000;
+  text-shadow: 0.5px 0.5px 2px #404040;
 }
 
 h2 {
@@ -303,14 +303,12 @@ button,
 .secondSubmit,
 .thirdSubmit {
   border: transparent;
-  -webkit-box-shadow: 2.5px 2px 10px #000000;
-          box-shadow: 2.5px 2px 10px #000000;
 }
 
 .buttonTop button,
 .buttonReset button {
   background: #FAFAFA;
-  border-radius: 15px;
+  border-radius: 7.5px;
   color: #404040;
   cursor: pointer;
   padding: 1%;
@@ -319,12 +317,11 @@ button,
   transition: all .5s;
 }
 
-.buttonTop button:hover,
-.buttonReset button:hover {
+.buttonTop button:hover, .buttonTop button:focus,
+.buttonReset button:hover,
+.buttonReset button:focus {
   color: #FAFAFA;
   background: #567BBF;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
   -webkit-transition: ease-in-out .5s;
   transition: ease-in-out .5s;
 }
@@ -348,27 +345,30 @@ button,
 .secondSubmit,
 .thirdSubmit {
   background: #FFBA39;
-  border-radius: 15px;
+  border-radius: 7.5px;
   padding: 1%;
   width: 15%;
 }
 
-.secondSubmit:hover,
-.thirdSubmit:hover {
+.secondSubmit:hover, .secondSubmit:active,
+.thirdSubmit:hover,
+.thirdSubmit:active {
   color: #FAFAFA;
   background: #567BBF;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
   -webkit-transition: ease-in-out .5s;
   transition: ease-in-out .5s;
 }
 
-input:hover,
-label:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-  -webkit-transition: ease-in-out .5s;
-  transition: ease-in-out .5s;
+input:focus + label,
+input:focus {
+  color: #404040;
+  background-color: #FFBA39;
+}
+
+input.secondSubmit:focus,
+input.thirdSubmit:focus {
+  color: #FAFAFA;
+  background-color: #567BBF;
 }
 
 @media only screen and (max-width: 768px) {
@@ -378,22 +378,14 @@ label:hover {
   }
   .buttonTop .start:hover,
   .buttonTop .reset:hover,
+  .buttonTop .start:active,
+  .buttonTop .reset:active,
   .buttonReset .start:hover,
-  .buttonReset .reset:hover {
+  .buttonReset .reset:hover,
+  .buttonReset .start:active,
+  .buttonReset .reset:active {
     -webkit-transform: none;
             transform: none;
-  }
-  .secondSubmit:hover,
-  .thirdSubmit:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  input:hover,
-  label:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-    -webkit-transition: ease-in-out .5s;
-    transition: ease-in-out .5s;
   }
 }
 
@@ -457,12 +449,13 @@ label:hover {
 
 @media only screen and (max-width: 425px) {
   .hero .title h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
   }
   .hero .title p {
     font-size: 1rem;
     text-align: center;
+    font-weight: 700;
   }
 }
 
@@ -481,14 +474,9 @@ label:hover {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background: #FAFAFA;
-  border-radius: 25px;
+  border-radius: 15px;
   font-size: 1.25rem;
   padding: 5%;
-}
-
-.formWrapper {
-  -webkit-box-shadow: 2.5px 2px 10px #000000;
-          box-shadow: 2.5px 2px 10px #000000;
 }
 
 .filter {
@@ -506,7 +494,7 @@ label:hover {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background: #FAFAFA;
-  border-radius: 25px;
+  border-radius: 15px;
   font-size: 1.25rem;
   padding: 5%;
 }
@@ -540,8 +528,6 @@ label:hover {
 .result .resultContainer .resultContent {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
-  -webkit-box-shadow: 5px 5px 15px #000000;
-          box-shadow: 5px 5px 15px #000000;
   padding: 4.5%;
 }
 
@@ -550,8 +536,6 @@ label:hover {
 }
 
 .result .resultContainer .resultImg img {
-  -webkit-box-shadow: 5px 5px 15px #000000;
-          box-shadow: 5px 5px 15px #000000;
   margin: 15% 0%;
 }
 
@@ -596,8 +580,14 @@ label:hover {
     padding: 0%;
     width: 100%;
   }
+  .result .resultContainer .resultContent {
+    margin-top: 10%;
+  }
   .result .resultContainer .resultImg {
     width: 100%;
+  }
+  .result .resultContainer .resultImg img {
+    margin: 5% 0%;
   }
 }
 

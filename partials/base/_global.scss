@@ -41,7 +41,6 @@ img {
 h2, h3, h5 {
   margin: 0%;
 	text-align: left;
-	text-shadow: 1px 1px 2px $blk;
 }
 
 p {
@@ -51,8 +50,9 @@ p {
 
 h1 {
 	@include fontProperty ($whtTwo, $fontFirst, 4.5rem, $bold);
+	margin-bottom: 5%;
 	text-transform: uppercase;
-	text-shadow: 2.5px 2.5px 2px $blk;
+	text-shadow: .5px .5px 2px $gry;
 }
 
 h2 {

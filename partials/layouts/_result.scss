@@ -1,5 +1,4 @@
 .result {
-  // background: $gry;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,7 +14,6 @@
     .resultContent {
       background: rgba(0,0,0,0.8);
       border-radius: 15px;
-      box-shadow: 5px 5px 15px $blk;
       padding: 4.5%;
     }
 
@@ -24,7 +22,6 @@
     }
 
     .resultImg img {
-      box-shadow: 5px 5px 15px $blk;
       margin: 15% 0%;
     }
   }
@@ -34,7 +31,7 @@
     height: 100%;
 
     h2{
-      padding:0;
+      padding: 0;
     }
 
     p {
@@ -62,8 +59,16 @@
         width: 100%;
       }
 
+      .resultContent {
+        margin-top: 10%;
+      }
+
       .resultImg {
         width: 100%;
+      }
+
+      .resultImg img {
+        margin: 5% 0%;
       }
     }
   }

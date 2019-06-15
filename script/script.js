@@ -110,13 +110,13 @@ $(`.start`).on(`click`, function (event) {
     `
     <h2 class="animated fadeInDown">What Would It Be?</h2>
     <div class = "formWrapper animated fadeIn">
-      <input type="radio" id="movies" value="movies" name="genreMain"></input>
+      <input tabindex="0" type="radio" id="movies" value="movies" name="genreMain"></input>
       <label for="movies">Movies!</label>
 
-      <input type="radio" id="tvShows" value="tvShows" name="genreMain"></input>
+      <input tabindex="0" type="radio" id="tvShows" value="tvShows" name="genreMain"></input>
       <label for="tvShows">TV Shows!</label>
 
-      <input id="secondSubmit" class="secondSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
+      <input tabindex="0" id="secondSubmit" class="secondSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
     </div>`
   );
 })
@@ -136,13 +136,13 @@ $(`.formOne`).on(`submit`, function (event) {
       `
       <h2 class="animated fadeInDown">What Do You Feel Like?</h2>
       <div class = "formWrapper animated fadeIn">
-      <input type="radio" id="drama" value="drama" name="genreSub"></input>
+      <input tabindex="0" type="radio" id="drama" value="drama" name="genreSub"></input>
       <label for="drama">Feelin' Emotional?</label>
 
-      <input type="radio" id="comedy" value="comedy" name="genreSub"></input>
+      <input tabindex="0" type="radio" id="comedy" value="comedy" name="genreSub"></input>
       <label for="comedy">Need Some Laughs?</label>
 
-      <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
+      <input tabindex="0" id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="Submit" required></input>
       </div>`
     );
     // make .formOne disappear after making selecting a choice.
@@ -153,13 +153,13 @@ $(`.formOne`).on(`submit`, function (event) {
       `
       <h2 class=""animated fadeInDown>What's going to be?</h2>
       <div class = "formWrapper animated fadeIn">
-      <input type="radio" id="drama" value="drama" name="genreSub"></input>
+      <input tabindex="0" type="radio" id="drama" value="drama" name="genreSub"></input>
       <label for="drama">Need them Feels?</label>
 
-      <input type="radio" id="comedy" value="comedy" name="genreSub"></input>
+      <input tabindex="0" type="radio" id="comedy" value="comedy" name="genreSub"></input>
       <label for="comedy">Giggles?</label>
 
-      <input id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>
+      <input tabindex="0" id="thirdSubmit" class="thirdSubmit" type="submit" value="Next!" aria-hidden="true" title="submit" required></input>
       </div>`
     );
     $(`.formOne`).css(`display`, `none`);  
