@@ -415,7 +415,7 @@ input.thirdSubmit:focus {
 }
 
 .hero .wrapper {
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .hero .title {
