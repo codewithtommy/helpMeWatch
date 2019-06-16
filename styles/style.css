@@ -414,6 +414,10 @@ input.thirdSubmit:focus {
   height: 100vh;
 }
 
+.hero .wrapper {
+  z-index: 1000;
+}
+
 .hero .title {
   padding: 0%;
 }
@@ -622,4 +626,3 @@ input.thirdSubmit:focus {
     text-align: center;
   }
 }
-/*# sourceMappingURL=style.css.map */
