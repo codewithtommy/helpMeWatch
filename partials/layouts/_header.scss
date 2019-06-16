@@ -4,6 +4,10 @@
   @include flexCenter (null, center, flex, null, null);
   height: 100vh;
 
+  .wrapper {
+    z-index: 1000;
+  }
+
   .title {
     padding: 0%;
 
